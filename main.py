@@ -2,7 +2,7 @@ from fuzzylogic.classes import Domain, Rule
 from fuzzylogic.functions import R, S, trapezoid, triangular
 from matplotlib import pyplot
 
-class raciocionador():
+class Raciocinador():
     def __init__(self):
         pyplot.rc("figure", figsize=(4, 4))
 
@@ -97,16 +97,4 @@ class raciocionador():
             self.atividade: pessoa["atividade"]
         }
 
-        print(self.rules(pessoa_mapeada, method='cog'))
-
-
-if __name__ == '__main__':
-
-    experimento = Raciocionador()
-    pessoinha = {
-            'idade': 50,
-            "imc": 22,
-            "glicose": 120,
-            "atividade": 1,
-        }
-    experimento.calcular_unica_instancia(pessoinha)
+        return self.rules(pessoa_mapeada, method='cog')
