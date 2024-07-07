@@ -88,18 +88,25 @@ class raciocionador():
         })
 
 
-    def calcular_unica_instancia(self):
-        test = {
-            self.idade: 50,
-            self.imc: 22,
-            self.glicose: 120,
-            self.atividade: 1,
+    def calcular_unica_instancia(self, pessoa):
+
+        pessoa_mapeada = {
+            self.idade: pessoa["idade"],
+            self.imc: pessoa["imc"],
+            self.glicose: pessoa["glicose"],
+            self.atividade: pessoa["atividade"]
         }
 
-        print(self.rules(test, method='cog'))
+        print(self.rules(pessoa_mapeada, method='cog'))
 
 
 if __name__ == '__main__':
 
-    experimento = raciocionador()
-    experimento.calcular_unica_instancia()
+    experimento = Raciocionador()
+    pessoinha = {
+            'idade': 50,
+            "imc": 22,
+            "glicose": 120,
+            "atividade": 1,
+        }
+    experimento.calcular_unica_instancia(pessoinha)
